@@ -10,7 +10,7 @@ This is a api for [**Markdown Blog**](https://markdown-blog-backend.herokuapp.co
   - Create Blog
   - Update Blog
   - Delete Blog
-  - 
+  
 -----
 
 # Languages & Technologies
