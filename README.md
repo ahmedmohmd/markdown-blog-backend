@@ -28,8 +28,6 @@ This is a api for [**Markdown Blog**](https://markdown-blog-backend.herokuapp.co
   <a href="https://www.expressjs.com/"><img src="https://static-00.iconduck.com/assets.00/express-original-icon-512x298-28hzbsin.png" width="48" height="48"/></a>
 </div>
 
------
-
 ### Other Technolohies & Libs:
   - [**dompurify**](https://www.npmjs.com/package/dompurify)
   - [**jsdom**](https://www.npmjs.com/package/jsdom)
