@@ -15,6 +15,8 @@ router.get("/", paginate(Article), async (req, res) => {
 
 // Fetch One Article
 router.get("/:slug", getArticle, async (req, res) => {
+  req.article.clicks++;
+  await req.article.save();
   res.status(200).json(req.article);
 });
 

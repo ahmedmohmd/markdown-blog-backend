@@ -28,7 +28,13 @@ const articleSchema = new mongoose.Schema(
     cover: {
       type: String,
     },
-    
+
+    clicks: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+
     sanitizedHtml: {
       type: String,
       required: true,
