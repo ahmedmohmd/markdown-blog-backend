@@ -21,15 +21,25 @@ router.get("/:slug", getArticle, async (req, res) => {
 // set article
 router.post("/new", async (req, res) => {
   try {
-    const article = new Article({
-      title: req.body.title,
-      markdown: req.body.markdown,
-    });
-    article.save();
+    const existingArticle = await Article.findOne({ slug: req.body.slug });
 
-    res.status(201).json(article);
+    if (!existingArticle) {
+      const article = new Article({
+        title: req.body.title,
+        markdown: req.body.markdown,
+        cover: req.body.cover,
+      });
+
+      const ar = await article.save();
+
+      return res.status(201).json(ar);
+    }
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res
+      .status(400)
+      .send(
+        "Article Title is Already Existed, Try Again With Another Article :("
+      );
   }
 });
 
@@ -39,10 +49,11 @@ router.patch("/edit/:slug", getArticle, async (req, res) => {
     const article = req.article;
     if (req.body.title != null) article.title = req.body.title;
     if (req.body.markdown != null) article.markdown = req.body.markdown;
+    if (req.body.cover != null) article.cover = req.body.cover;
 
-    article.save();
+    const newArticle = article.save();
 
-    res.status(201).json(article);
+    res.status(201).json(newArticle);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }

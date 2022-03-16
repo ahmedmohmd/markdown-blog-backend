@@ -35,7 +35,7 @@ mongoose
 // Handle Boody Parse
 app.use(
   bodyParser.urlencoded({
-    extended: false,
+    extended: true,
   })
 );
 app.use(bodyParser.json());

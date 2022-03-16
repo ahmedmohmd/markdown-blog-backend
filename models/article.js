@@ -25,6 +25,10 @@ const articleSchema = new mongoose.Schema(
       required: true,
     },
 
+    cover: {
+      type: String,
+    },
+    
     sanitizedHtml: {
       type: String,
       required: true,
@@ -33,7 +37,7 @@ const articleSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-articleSchema.pre("validate", function (next) {
+articleSchema.pre("validate", async function (next) {
   if (this.title) {
     this.slug = slugify(this.title, {
       strict: true,
@@ -44,6 +48,7 @@ articleSchema.pre("validate", function (next) {
   if (this.markdown) {
     this.sanitizedHtml = dompurify.sanitize(marked(this.markdown));
   }
+
   next();
 });
 
