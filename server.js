@@ -3,6 +3,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const articlesRouter = require("./routes/articles");
+const usersRouter = require("./routes/users");
 const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
@@ -25,6 +26,7 @@ mongoose
   .connect(
     process.env.MONGODB_CONNECTION_STRING ||
       "mongodb+srv://mohamed:95123574@cluster0.1bxam.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    // "mongodb://localhost/blog",
     {
       useNewUrlParser: true,
     }
@@ -41,6 +43,7 @@ app.use(
 app.use(bodyParser.json());
 
 // App Routes
+app.use("/api/users", usersRouter);
 app.use("/api/articles", articlesRouter);
 
 // Lesten to Server

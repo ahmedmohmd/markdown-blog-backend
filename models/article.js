@@ -39,6 +39,14 @@ const articleSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    owner: {
+      type: mongoose.SchemaTypes.ObjectId,
+      required: true,
+    },
+    ownerName: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );
