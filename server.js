@@ -26,7 +26,6 @@ mongoose
   .connect(
     process.env.MONGODB_CONNECTION_STRING ||
       "mongodb+srv://mohamed:95123574@cluster0.1bxam.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    // "mongodb://localhost/blog",
     {
       useNewUrlParser: true,
     }
