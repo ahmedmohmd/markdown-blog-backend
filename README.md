@@ -35,7 +35,7 @@ This is a api for [**Markdown Blog**](https://markdown-blog-backend.herokuapp.co
   - [**mongoose**](https://www.npmjs.com/package/mongoose)
   - [**slugify**](https://www.npmjs.com/package/slugify)
 
------
+<!-- -----
 
 # Web App Screenshot
-![Weather App Image](https://github.com/ahmedmohmd/markdown-blog-backend/blob/main/appScreenshot.png?raw=true)
+![Weather App Image](https://github.com/ahmedmohmd/markdown-blog-backend/blob/main/appScreenshot.png?raw=true) -->
